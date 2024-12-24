@@ -8,7 +8,6 @@ def solve(x, y):
             dp[i] = dp[i] + dp[i-1]
     return dp[-1]
 
-
 def main():
     N, M, K = map(int, input().split())
     if K != 0:
