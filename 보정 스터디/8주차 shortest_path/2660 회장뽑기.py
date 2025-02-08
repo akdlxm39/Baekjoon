@@ -16,10 +16,7 @@ def main():
                 if friendship[i][k] == INF or friendship[k][j] == INF:
                     continue
                 friendship[i][j] = min(friendship[i][j], friendship[i][k] + friendship[k][j])
-    for f in friendship:
-        print(*f)
     point = [max(f) for f in friendship[1:]]
-    print(*point)
     min_point = min(point)
     candidate = [i for i, x in enumerate(point, 1) if x == min_point]
     print(min_point, len(candidate))
