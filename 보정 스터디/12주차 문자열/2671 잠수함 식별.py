@@ -28,3 +28,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# import re
+# def main():
+#     s = input().rstrip()
+#     pattern = re.compile('(100+1+|01)+')
+#     if pattern.fullmatch(s):
+#         print("SUBMARINE")
+#     else:
+#         print("NOISE")
