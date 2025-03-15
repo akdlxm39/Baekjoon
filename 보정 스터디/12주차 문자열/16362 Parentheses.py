@@ -39,9 +39,9 @@ def main():
             else:
                 flag = -1
                 break
-    if flag == -1 or stack:
+    if flag == -1 or alpha == oper or stack:
         print('error')
-    elif len(exp) == 1 or alpha == 2 and oper == 1 and flag == 0:
+    elif alpha == 2 and oper == 1 and flag == 0:
         print('proper')
     else:
         print('improper')
