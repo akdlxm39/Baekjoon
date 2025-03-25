@@ -3,23 +3,14 @@ input = sys.stdin.readline
 
 def main():
     n = int(input())
-    pi = list(map(int, input().split()))
+    p = list(map(int, input().split()))
     m = int(input())
-    cmp = lambda x: ((m - pi[x]) // pi[0], x)
-    if n == 1:
-        print(0)
-        return
-    ans = ''
-    idx = max(range(1, n), key=cmp)
-    while m>0:
-        if pi[idx] > m:
-            break
-        ans += str(idx)
-        m -= pi[idx]
-        idx = max(range(n), key=cmp)
-    if m>0:
-        ans += '0'*(m//pi[0])
-    print(int(ans))
+    dp = [-1]*(m+1)
+    for i in range(n-1, -1, -1):
+        pi = p[i]
+        for j in range(pi, m+1):
+            dp[j] = max(dp[j], dp[j-pi]*10+i, i)
+    print(dp[m])
 
 if __name__ == "__main__":
     main()
